@@ -15,6 +15,7 @@
 		C1422F9A204D12500004D9AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1422F98204D12500004D9AB /* LaunchScreen.storyboard */; };
 		C1422FA5204D12500004D9AB /* TappyFingersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422FA4204D12500004D9AB /* TappyFingersTests.swift */; };
 		C1422FB0204D12500004D9AB /* TappyFingersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422FAF204D12500004D9AB /* TappyFingersUITests.swift */; };
+		C1422FC0204D1AC80004D9AB /* PadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422FBF204D1AC80004D9AB /* PadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C1422FAB204D12500004D9AB /* TappyFingersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappyFingersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1422FAF204D12500004D9AB /* TappyFingersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappyFingersUITests.swift; sourceTree = "<group>"; };
 		C1422FB1204D12500004D9AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1422FBF204D1AC80004D9AB /* PadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +101,9 @@
 		C1422F8B204D12500004D9AB /* TappyFingers */ = {
 			isa = PBXGroup;
 			children = (
+				C1422FBE204D1A6A0004D9AB /* Views */,
+				C1422FBD204D1A580004D9AB /* View Controllers */,
 				C1422F8C204D12500004D9AB /* AppDelegate.swift */,
-				C1422F8E204D12500004D9AB /* ViewController.swift */,
 				C1422F90204D12500004D9AB /* Main.storyboard */,
 				C1422F96204D12500004D9AB /* Assets.xcassets */,
 				C1422F98204D12500004D9AB /* LaunchScreen.storyboard */,
@@ -126,6 +129,22 @@
 				C1422FB1204D12500004D9AB /* Info.plist */,
 			);
 			path = TappyFingersUITests;
+			sourceTree = "<group>";
+		};
+		C1422FBD204D1A580004D9AB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C1422F8E204D12500004D9AB /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C1422FBE204D1A6A0004D9AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C1422FBF204D1AC80004D9AB /* PadView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1422FC0204D1AC80004D9AB /* PadView.swift in Sources */,
 				C1422F8F204D12500004D9AB /* ViewController.swift in Sources */,
 				C1422F8D204D12500004D9AB /* AppDelegate.swift in Sources */,
 				C1422F95204D12500004D9AB /* TappyFingers.xcdatamodeld in Sources */,
