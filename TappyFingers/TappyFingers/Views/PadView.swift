@@ -28,12 +28,12 @@ class PadView: UIView {
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
         
-        let CatSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "Meow-sounds", ofType: "mp3")!)
+        let bombSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "bomb", ofType: "mp3")!)
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: CatSound as URL)
+            audioPlayer = try AVAudioPlayer(contentsOf: bombSound as URL)
             audioPlayer.prepareToPlay()
         } catch {
-            print("Problem in getting File")
+            print("Problem getting File")
         }
     }
     

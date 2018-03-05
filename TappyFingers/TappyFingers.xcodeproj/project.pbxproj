@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1382676204D219C00C505D0 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1382675204D219C00C505D0 /* bomb.mp3 */; };
 		C1422F8D204D12500004D9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422F8C204D12500004D9AB /* AppDelegate.swift */; };
 		C1422F8F204D12500004D9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422F8E204D12500004D9AB /* ViewController.swift */; };
 		C1422F92204D12500004D9AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1422F90204D12500004D9AB /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C1382675204D219C00C505D0 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		C1422F89204D12500004D9AB /* TappyFingers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappyFingers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1422F8C204D12500004D9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1422F8E204D12500004D9AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1382672204D211D00C505D0 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C1382675204D219C00C505D0 /* bomb.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		C1422F80204D12500004D9AB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 		C1422F8B204D12500004D9AB /* TappyFingers */ = {
 			isa = PBXGroup;
 			children = (
+				C1382672204D211D00C505D0 /* Sounds */,
 				C1422FBE204D1A6A0004D9AB /* Views */,
 				C1422FBD204D1A580004D9AB /* View Controllers */,
 				C1422F8C204D12500004D9AB /* AppDelegate.swift */,
@@ -256,6 +267,7 @@
 			files = (
 				C1422F9A204D12500004D9AB /* LaunchScreen.storyboard in Resources */,
 				C1422F97204D12500004D9AB /* Assets.xcassets in Resources */,
+				C1382676204D219C00C505D0 /* bomb.mp3 in Resources */,
 				C1422F92204D12500004D9AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
