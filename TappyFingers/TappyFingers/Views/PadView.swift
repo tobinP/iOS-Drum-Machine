@@ -12,6 +12,7 @@ import AVFoundation
 class PadView: UIView {
     
     var audioPlayer = AVAudioPlayer()
+    var soundFileName = "bomb"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +29,7 @@ class PadView: UIView {
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
         
-        let bombSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: "bomb", ofType: "mp3")!)
+        let bombSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundFileName, ofType: "mp3")!)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: bombSound as URL)
             audioPlayer.prepareToPlay()
