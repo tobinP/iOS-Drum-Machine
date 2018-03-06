@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C1382676204D219C00C505D0 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1382675204D219C00C505D0 /* bomb.mp3 */; };
+		C138267E204E473500C505D0 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382677204E473500C505D0 /* snare.wav */; };
+		C138267F204E473500C505D0 /* floortom.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382678204E473500C505D0 /* floortom.wav */; };
+		C1382680204E473500C505D0 /* dirtkick.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382679204E473500C505D0 /* dirtkick.wav */; };
+		C1382681204E473500C505D0 /* closedhat.wav in Resources */ = {isa = PBXBuildFile; fileRef = C138267A204E473500C505D0 /* closedhat.wav */; };
+		C1382682204E473500C505D0 /* symbol.wav in Resources */ = {isa = PBXBuildFile; fileRef = C138267B204E473500C505D0 /* symbol.wav */; };
+		C1382683204E473500C505D0 /* delight.wav in Resources */ = {isa = PBXBuildFile; fileRef = C138267C204E473500C505D0 /* delight.wav */; };
+		C1382684204E473500C505D0 /* openhat.wav in Resources */ = {isa = PBXBuildFile; fileRef = C138267D204E473500C505D0 /* openhat.wav */; };
 		C1422F8D204D12500004D9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422F8C204D12500004D9AB /* AppDelegate.swift */; };
 		C1422F8F204D12500004D9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1422F8E204D12500004D9AB /* ViewController.swift */; };
 		C1422F92204D12500004D9AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1422F90204D12500004D9AB /* Main.storyboard */; };
@@ -38,6 +45,13 @@
 
 /* Begin PBXFileReference section */
 		C1382675204D219C00C505D0 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
+		C1382677204E473500C505D0 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
+		C1382678204E473500C505D0 /* floortom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = floortom.wav; sourceTree = "<group>"; };
+		C1382679204E473500C505D0 /* dirtkick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dirtkick.wav; sourceTree = "<group>"; };
+		C138267A204E473500C505D0 /* closedhat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = closedhat.wav; sourceTree = "<group>"; };
+		C138267B204E473500C505D0 /* symbol.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = symbol.wav; sourceTree = "<group>"; };
+		C138267C204E473500C505D0 /* delight.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = delight.wav; sourceTree = "<group>"; };
+		C138267D204E473500C505D0 /* openhat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = openhat.wav; sourceTree = "<group>"; };
 		C1422F89204D12500004D9AB /* TappyFingers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappyFingers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1422F8C204D12500004D9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1422F8E204D12500004D9AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +97,13 @@
 		C1382672204D211D00C505D0 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				C138267A204E473500C505D0 /* closedhat.wav */,
+				C138267C204E473500C505D0 /* delight.wav */,
+				C1382679204E473500C505D0 /* dirtkick.wav */,
+				C1382678204E473500C505D0 /* floortom.wav */,
+				C138267D204E473500C505D0 /* openhat.wav */,
+				C1382677204E473500C505D0 /* snare.wav */,
+				C138267B204E473500C505D0 /* symbol.wav */,
 				C1382675204D219C00C505D0 /* bomb.mp3 */,
 			);
 			path = Sounds;
@@ -265,9 +286,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1382681204E473500C505D0 /* closedhat.wav in Resources */,
+				C1382684204E473500C505D0 /* openhat.wav in Resources */,
 				C1422F9A204D12500004D9AB /* LaunchScreen.storyboard in Resources */,
 				C1422F97204D12500004D9AB /* Assets.xcassets in Resources */,
 				C1382676204D219C00C505D0 /* bomb.mp3 in Resources */,
+				C1382683204E473500C505D0 /* delight.wav in Resources */,
+				C138267E204E473500C505D0 /* snare.wav in Resources */,
+				C1382680204E473500C505D0 /* dirtkick.wav in Resources */,
+				C1382682204E473500C505D0 /* symbol.wav in Resources */,
+				C138267F204E473500C505D0 /* floortom.wav in Resources */,
 				C1422F92204D12500004D9AB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,11 +490,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YH4JRY9FA5;
 				INFOPLIST_FILE = TappyFingers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tobinpomeroy.TappyFingers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -476,11 +508,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YH4JRY9FA5;
 				INFOPLIST_FILE = TappyFingers/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tobinpomeroy.TappyFingers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
