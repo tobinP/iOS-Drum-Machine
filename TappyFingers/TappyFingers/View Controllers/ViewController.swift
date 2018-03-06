@@ -9,9 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var padViews: [PadView]!
+    
+    let drumFileNames = ["closedhat", "dirtkick", "floortom", "openhat", "snare", "symbol"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 0..<padViews.count {
+            padViews[i].audioPlayerSetup(fileName: drumFileNames[i])
+        }
         
     }
 

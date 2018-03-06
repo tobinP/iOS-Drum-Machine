@@ -68,6 +68,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="padViews" destination="Dnv-g0-Fg4" collectionClass="NSMutableArray" id="ZGL-QE-UkK"/>
+                        <outletCollection property="padViews" destination="sGo-JY-txr" collectionClass="NSMutableArray" id="PaT-x4-Hvb"/>
+                        <outletCollection property="padViews" destination="2gD-I6-kNs" collectionClass="NSMutableArray" id="o8Y-EV-PZV"/>
+                        <outletCollection property="padViews" destination="Cws-nV-Z1i" collectionClass="NSMutableArray" id="zOZ-7m-MP7"/>
+                        <outletCollection property="padViews" destination="7vd-8Z-sR4" collectionClass="NSMutableArray" id="fiX-Zz-Dj2"/>
+                        <outletCollection property="padViews" destination="cxz-tp-gcn" collectionClass="NSMutableArray" id="udT-sP-pkI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

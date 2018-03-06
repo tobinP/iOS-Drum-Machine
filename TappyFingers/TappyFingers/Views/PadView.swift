@@ -12,7 +12,7 @@ import AVFoundation
 class PadView: UIView {
     
     var audioPlayer = AVAudioPlayer()
-    var soundFileName = "bomb"
+    var soundFileName = "dirtkick"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,10 +28,12 @@ class PadView: UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(padWasTapped))
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
-        
-        let bombSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: soundFileName, ofType: "mp3")!)
+    }
+    
+    func audioPlayerSetup(fileName: String) {
+        let drumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: fileName, ofType: "wav")!)
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: bombSound as URL)
+            audioPlayer = try AVAudioPlayer(contentsOf: drumSound as URL)
             audioPlayer.prepareToPlay()
         } catch {
             print("Problem getting File")
@@ -39,6 +41,7 @@ class PadView: UIView {
     }
     
     @objc func padWasTapped() {
+        audioPlayer.currentTime = 0
         print("tapped!")
         audioPlayer.play()
     }
