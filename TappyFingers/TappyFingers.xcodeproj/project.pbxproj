@@ -11,6 +11,7 @@
 		C12A721B2050477E004DA5DF /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A721A2050477D004DA5DF /* RecordingView.swift */; };
 		C12A721D2050DD56004DA5DF /* AltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A721C2050DD56004DA5DF /* AltViewController.swift */; };
 		C12A72202050E937004DA5DF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A721F2050E937004DA5DF /* UIViewExtensions.swift */; };
+		C12A72222050FAEC004DA5DF /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A72212050FAEC004DA5DF /* URLExtensions.swift */; };
 		C1382676204D219C00C505D0 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1382675204D219C00C505D0 /* bomb.mp3 */; };
 		C138267E204E473500C505D0 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382677204E473500C505D0 /* snare.wav */; };
 		C138267F204E473500C505D0 /* floortom.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382678204E473500C505D0 /* floortom.wav */; };
@@ -52,6 +53,7 @@
 		C12A721A2050477D004DA5DF /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 		C12A721C2050DD56004DA5DF /* AltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltViewController.swift; sourceTree = "<group>"; };
 		C12A721F2050E937004DA5DF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		C12A72212050FAEC004DA5DF /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		C1382675204D219C00C505D0 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		C1382677204E473500C505D0 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
 		C1382678204E473500C505D0 /* floortom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = floortom.wav; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				C12A721F2050E937004DA5DF /* UIViewExtensions.swift */,
+				C12A72212050FAEC004DA5DF /* URLExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1422FC0204D1AC80004D9AB /* PadView.swift in Sources */,
+				C12A72222050FAEC004DA5DF /* URLExtensions.swift in Sources */,
 				C12A72202050E937004DA5DF /* UIViewExtensions.swift in Sources */,
 				C12A721B2050477E004DA5DF /* RecordingView.swift in Sources */,
 				C1422F8F204D12500004D9AB /* ViewController.swift in Sources */,

@@ -16,7 +16,6 @@ protocol PadViewDelegate: class {
 class PadView: UIView {
     
     var audioPlayer = AVAudioPlayer()
-    
     weak var delegate: PadViewDelegate?
     
     // MARK: Transforms
