@@ -16,10 +16,10 @@ protocol PadViewDelegate: class {
 class PadView: UIView {
     
     var audioPlayer = AVAudioPlayer()
-    
     weak var delegate: PadViewDelegate?
     
     // MARK: Transforms
+    
     let rotate360 = CGAffineTransform(rotationAngle: 6)
     let rotate180 = CGAffineTransform(rotationAngle: CGFloat.pi)
     var rotate90 = CGAffineTransform(rotationAngle: CGFloat.pi / 2)

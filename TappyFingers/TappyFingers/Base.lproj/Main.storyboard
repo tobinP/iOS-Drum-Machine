@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFe-BD-tr8" customClass="RecordingView" customModule="TappyFingers" customModuleProvider="target">
+                                <rect key="frame" x="308" y="0.0" width="50" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="uQl-2l-Jnx"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J8V-oW-OhY">
                                 <rect key="frame" x="20" y="20" width="627" height="335"/>
                                 <subviews>
@@ -82,8 +89,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J8V-oW-OhY" secondAttribute="bottom" constant="20" id="SeI-jT-2Qo"/>
                             <constraint firstItem="J8V-oW-OhY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VMq-9v-jIi"/>
                             <constraint firstItem="Q4r-gb-O1r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WCh-6z-sDP"/>
+                            <constraint firstItem="dFe-BD-tr8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="c8M-yw-Psy"/>
                             <constraint firstItem="Q4r-gb-O1r" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaO-9N-Khy"/>
+                            <constraint firstItem="dFe-BD-tr8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kHI-KJ-sxL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J8V-oW-OhY" secondAttribute="trailing" constant="20" id="oIP-b0-9sU"/>
+                            <constraint firstItem="dFe-BD-tr8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uDI-in-M72"/>
                             <constraint firstItem="Q4r-gb-O1r" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xxO-3L-5Xr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,6 +102,8 @@
                         <outlet property="bottomStackView" destination="gai-AN-WDP" id="6kp-qb-71X"/>
                         <outlet property="optionContainerView" destination="Q4r-gb-O1r" id="Fp5-RX-KcU"/>
                         <outlet property="optionLabel" destination="iAl-2W-WKV" id="4fy-d6-Pbq"/>
+                        <outlet property="recordingView" destination="dFe-BD-tr8" id="ItS-Ul-dk0"/>
+                        <outlet property="recordingViewWidthConstraint" destination="uQl-2l-Jnx" id="EbP-83-M9r"/>
                         <outlet property="topMiddlePad" destination="Dnv-g0-Fg4" id="0W0-Qm-EXA"/>
                         <outlet property="topStackView" destination="cK0-GJ-rae" id="bIM-gf-e7g"/>
                         <outletCollection property="padViews" destination="Dnv-g0-Fg4" collectionClass="NSMutableArray" id="ZGL-QE-UkK"/>
@@ -105,6 +117,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="98.50074962518741" y="117.59999999999999"/>
+        </scene>
+        <!--Alt View Controller-->
+        <scene sceneID="k1b-0s-3lW">
+            <objects>
+                <viewController id="0EN-CB-xJa" customClass="AltViewController" customModule="TappyFingers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pYR-XZ-goa">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vru-t9-fCy">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
+                                <color key="backgroundColor" red="0.86216201910000001" green="0.72789883560000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="1tP-P4-gjh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Al-wU-tqD">
+                                <rect key="frame" x="585" y="40" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="0EN-CB-xJa" eventType="touchUpInside" id="q3P-vO-TMf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vru-t9-fCy" firstAttribute="leading" secondItem="8EZ-am-pxk" secondAttribute="leading" id="20Z-wd-99e"/>
+                            <constraint firstItem="vru-t9-fCy" firstAttribute="top" secondItem="8EZ-am-pxk" secondAttribute="top" id="DpF-Ki-XKZ"/>
+                            <constraint firstItem="vru-t9-fCy" firstAttribute="bottom" secondItem="8EZ-am-pxk" secondAttribute="bottom" id="wdp-Zf-owe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8EZ-am-pxk"/>
+                    </view>
+                    <connections>
+                        <outlet property="testView" destination="vru-t9-fCy" id="E85-rq-a3p"/>
+                        <outlet property="testViewWidthConstraint" destination="1tP-P4-gjh" id="hSt-QI-Zlz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hD-tx-93v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.89355322338831" y="908"/>
         </scene>
     </scenes>
 </document>
