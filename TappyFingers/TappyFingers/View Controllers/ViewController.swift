@@ -9,9 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var labelStackView: UIStackView!
-    @IBOutlet var labels: [UILabel]!
+
+    @IBOutlet weak var recordingViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var recordingView: RecordingView!
     @IBOutlet var padViews: [PadView]!
     @IBOutlet weak var topMiddlePad: PadView!
     @IBOutlet weak var topStackView: UIStackView!
@@ -39,12 +39,16 @@ class ViewController: UIViewController {
             padViews[i].audioPlayerSetup(fileName: drumFileNames[i])
             padViews[i].delegate = self
         }
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(displayRecordingView))
+        optionLabel.addGestureRecognizer(tap)
+        optionLabel.isUserInteractionEnabled = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        rotateAllPads180()
+//        rotateAllPads180()
     }
     
     func createGradientLayer() {
@@ -70,6 +74,43 @@ class ViewController: UIViewController {
             }
         }, completion: nil )
     }
+    
+    @objc func displayRecordingView() {
+        
+        // Animate the view expansion and alpha
+        self.view.bringSubview(toFront: recordingView)
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut], animations: {
+            self.recordingView.alpha = 1
+        }, completion: nil )
+        self.recordingViewWidthConstraint.constant = 500
+        UIView.animate(withDuration: 2) {
+            self.view.layoutIfNeeded()
+        }
+        
+        // Create transparent gradient
+//        let mask = CAGradientLayer()
+//        mask.startPoint = CGPoint(x: 0, y: 0.5)
+//        mask.endPoint = CGPoint(x:0.25, y:0.5)
+//        let whiteColor = UIColor.white
+//        mask.colors = [whiteColor.withAlphaComponent(0.0).cgColor,
+//                       whiteColor.withAlphaComponent(1.0).cgColor,
+//                       whiteColor.withAlphaComponent(1.0).cgColor]
+//        mask.locations = [NSNumber(value: 0.0),
+//                          NSNumber(value: 0.8),
+//                          NSNumber(value: 1.0)]
+//        mask.frame = view.bounds
+//        recordingView.layer.mask = mask
+        
+        let maskLayer = CAGradientLayer()
+        maskLayer.frame = recordingView.bounds
+        maskLayer.shadowRadius = 5
+        maskLayer.shadowPath = CGPath(roundedRect: recordingView.bounds.insetBy(dx: 5, dy: 5), cornerWidth: 10, cornerHeight: 10, transform: nil)
+        maskLayer.shadowOpacity = 1;
+        maskLayer.shadowOffset = CGSize.zero;
+        maskLayer.shadowColor = UIColor.white.cgColor
+        recordingView.layer.mask = maskLayer;
+        
+    }
 }
 
 extension ViewController: PadViewDelegate {
@@ -83,7 +124,7 @@ extension ViewController: PadViewDelegate {
         blurEffectView.addGestureRecognizer(tap)
         blurEffectView.isUserInteractionEnabled = true
         
-        UIView.animate(withDuration: 1.6, delay: 0, options: [], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
             self.blurEffectView.effect = UIBlurEffect(style: .dark)
         }, completion: { _ in self.popupMenu() } )
     }
@@ -100,8 +141,22 @@ extension ViewController: PadViewDelegate {
     }
     
     @objc func dismissMenu() {
+        
+        // Slowly dismiss the blur view
         UIView.animate(withDuration: 0.9, delay: 0, options: [], animations: {
             self.blurEffectView.effect = nil
         }, completion: { _ in self.blurEffectView.removeFromSuperview() } )
+        
+        // Shrink and hide the recording view
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut], animations: {
+            self.recordingView.alpha = 0
+        }, completion: nil )
+        self.recordingViewWidthConstraint.constant = 0
+        UIView.animate(withDuration: 2) {
+            self.view.layoutIfNeeded()
+        }
+        
+        // Hide option view and content
+        self.view.sendSubview(toBack: optionContainerView)
     }
 }
