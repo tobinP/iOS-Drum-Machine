@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PadView" customModule="TappyFingers" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="2pq-zl-NTh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="256"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPh-Af-ZPr">
+                    <rect key="frame" x="0.0" y="0.0" width="328" height="256"/>
+                    <gestureRecognizers/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="padWasTapped:" destination="-1" eventType="touchDown" id="6jl-6A-cwR"/>
+                        <outletCollection property="gestureRecognizers" destination="Sxj-t7-0Q4" appends="YES" id="b6D-ht-P9z"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HPh-Af-ZPr" secondAttribute="trailing" id="buw-Mq-rST"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HPh-Af-ZPr" secondAttribute="bottom" id="gpi-cg-AfN"/>
+                <constraint firstItem="HPh-Af-ZPr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="n48-0m-yC5"/>
+                <constraint firstItem="HPh-Af-ZPr" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="zao-hb-NNj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="10" y="-151"/>
+        </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="1" id="Sxj-t7-0Q4">
+            <connections>
+                <action selector="padWasLongPressed:" destination="-1" id="LlY-7A-YOI"/>
+            </connections>
+        </pongPressGestureRecognizer>
+    </objects>
+</document>

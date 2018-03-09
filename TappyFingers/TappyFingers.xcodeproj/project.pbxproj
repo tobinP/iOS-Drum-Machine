@@ -12,6 +12,8 @@
 		C12A721D2050DD56004DA5DF /* AltViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A721C2050DD56004DA5DF /* AltViewController.swift */; };
 		C12A72202050E937004DA5DF /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A721F2050E937004DA5DF /* UIViewExtensions.swift */; };
 		C12A72222050FAEC004DA5DF /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A72212050FAEC004DA5DF /* URLExtensions.swift */; };
+		C12A722420524AE8004DA5DF /* SamplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12A722320524AE8004DA5DF /* SamplePickerViewController.swift */; };
+		C12A722620525AE6004DA5DF /* PadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C12A722520525AE6004DA5DF /* PadView.xib */; };
 		C1382676204D219C00C505D0 /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1382675204D219C00C505D0 /* bomb.mp3 */; };
 		C138267E204E473500C505D0 /* snare.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382677204E473500C505D0 /* snare.wav */; };
 		C138267F204E473500C505D0 /* floortom.wav in Resources */ = {isa = PBXBuildFile; fileRef = C1382678204E473500C505D0 /* floortom.wav */; };
@@ -54,6 +56,8 @@
 		C12A721C2050DD56004DA5DF /* AltViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltViewController.swift; sourceTree = "<group>"; };
 		C12A721F2050E937004DA5DF /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		C12A72212050FAEC004DA5DF /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
+		C12A722320524AE8004DA5DF /* SamplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePickerViewController.swift; sourceTree = "<group>"; };
+		C12A722520525AE6004DA5DF /* PadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PadView.xib; sourceTree = "<group>"; };
 		C1382675204D219C00C505D0 /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		C1382677204E473500C505D0 /* snare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = snare.wav; sourceTree = "<group>"; };
 		C1382678204E473500C505D0 /* floortom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = floortom.wav; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 			children = (
 				C1422F8E204D12500004D9AB /* ViewController.swift */,
 				C12A721C2050DD56004DA5DF /* AltViewController.swift */,
+				C12A722320524AE8004DA5DF /* SamplePickerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				C1422FBF204D1AC80004D9AB /* PadView.swift */,
 				C12A72182050462F004DA5DF /* RecordingView.xib */,
 				C12A721A2050477D004DA5DF /* RecordingView.swift */,
+				C12A722520525AE6004DA5DF /* PadView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12A722620525AE6004DA5DF /* PadView.xib in Resources */,
 				C1382681204E473500C505D0 /* closedhat.wav in Resources */,
 				C1382684204E473500C505D0 /* openhat.wav in Resources */,
 				C12A72192050462F004DA5DF /* RecordingView.xib in Resources */,
@@ -349,6 +356,7 @@
 				C12A72222050FAEC004DA5DF /* URLExtensions.swift in Sources */,
 				C12A72202050E937004DA5DF /* UIViewExtensions.swift in Sources */,
 				C12A721B2050477E004DA5DF /* RecordingView.swift in Sources */,
+				C12A722420524AE8004DA5DF /* SamplePickerViewController.swift in Sources */,
 				C1422F8F204D12500004D9AB /* ViewController.swift in Sources */,
 				C1422F8D204D12500004D9AB /* AppDelegate.swift in Sources */,
 				C12A721D2050DD56004DA5DF /* AltViewController.swift in Sources */,
