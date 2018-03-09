@@ -135,11 +135,6 @@ class RecordingView: UIView {
         audioPlayer.currentTime = 0
         audioPlayer.play()
     }
-    
-//    func getDocumentsDirectory() -> URL {
-//        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        return paths[0]
-//    }
 }
 
 extension RecordingView: AVAudioRecorderDelegate {

@@ -10,10 +10,12 @@ import UIKit
 import AVFoundation
 
 protocol PadViewDelegate: class {
-    func padWasLongPressed()
+    func padWasLongPressed(pad: PadView)
 }
 
 class PadView: UIView {
+    
+    @IBOutlet var contentView: UIView!
     
     var audioPlayer = AVAudioPlayer()
     weak var delegate: PadViewDelegate?
@@ -39,8 +41,7 @@ class PadView: UIView {
     }
     
     func setup() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(padWasTapped))
-        self.addGestureRecognizer(tap)
+        setupView()
         self.isUserInteractionEnabled = true
         createColorSets()
         createGradientLayer()
@@ -50,18 +51,28 @@ class PadView: UIView {
         self.layer.borderColor = UIColor.black.cgColor
     }
     
-    @objc func padWasTapped() {
-        
-        delegate?.padWasLongPressed()
-        
-//        audioPlayer.currentTime = 0
-//        audioPlayer.play()
-//
-//        changeGradient()
-//
-//        //        performRotation()
-//        //        changeSize()
-//        wiggle()
+    func setupView() {
+        Bundle.main.loadNibNamed("PadView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    }
+    
+    @IBAction func padWasTapped(_ sender: UIButton) {
+        audioPlayer.currentTime = 0
+        audioPlayer.play()
+
+        changeGradient()
+
+        //        performRotation()
+        //        changeSize()
+        wiggle()
+    }
+    @IBAction func padWasLongPressed(_ sender: UILongPressGestureRecognizer) {
+        delegate?.padWasLongPressed(pad: self)
     }
     
     // MARK: Gradient Methods
@@ -125,6 +136,16 @@ class PadView: UIView {
         let drumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: fileName, ofType: "wav")!)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: drumSound as URL)
+            audioPlayer.prepareToPlay()
+        } catch {
+            print("Problem getting File")
+        }
+    }
+    
+    func audioPlayerSetup2(fileName: String) {
+        let drumSound = URL.getDocumentsDirectory().appendingPathComponent(fileName)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: drumSound)
             audioPlayer.prepareToPlay()
         } catch {
             print("Problem getting File")

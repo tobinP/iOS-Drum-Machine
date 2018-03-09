@@ -68,18 +68,64 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4r-gb-O1r">
                                 <rect key="frame" x="235" y="0.0" width="197" height="375"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create new sample" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAl-2W-WKV">
-                                        <rect key="frame" x="20" y="177.5" width="156.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcg-g6-JF8">
+                                        <rect key="frame" x="43.5" y="50" width="110.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-Sa-Jsa">
+                                        <rect key="frame" x="30.5" y="94" width="135" height="30"/>
+                                        <state key="normal" title="Record new sample">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="displayRecordingView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I0i-ZC-xz3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEc-ZB-fvh" userLabel="Pick Sample Option Button">
+                                        <rect key="frame" x="27" y="122" width="142" height="30"/>
+                                        <state key="normal" title="Pick sample from list">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0EN-CB-xJa" kind="presentation" identifier="SamplePickerSegue" modalPresentationStyle="currentContext" id="Uu7-NS-xHS"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visuals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XN-k8-KJC">
+                                        <rect key="frame" x="45" y="202" width="107" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-If-Jrr">
+                                        <rect key="frame" x="74" y="246" width="48" height="30"/>
+                                        <state key="normal" title="Wiggle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBD-wE-nTs">
+                                        <rect key="frame" x="55" y="276" width="86" height="30"/>
+                                        <state key="normal" title="Color Morph">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="iAl-2W-WKV" firstAttribute="centerY" secondItem="Q4r-gb-O1r" secondAttribute="centerY" id="F6j-Fj-oTr"/>
+                                    <constraint firstItem="rcg-g6-JF8" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="0GG-2H-l4I"/>
+                                    <constraint firstItem="2XN-k8-KJC" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="0or-gD-dwV"/>
+                                    <constraint firstItem="WEc-ZB-fvh" firstAttribute="top" secondItem="dvG-Sa-Jsa" secondAttribute="bottom" constant="-2" id="5OS-YD-h4A"/>
+                                    <constraint firstItem="rcg-g6-JF8" firstAttribute="top" secondItem="Q4r-gb-O1r" secondAttribute="top" constant="50" id="FbY-N6-T0p"/>
+                                    <constraint firstItem="1wQ-If-Jrr" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="GPa-h5-hzC"/>
+                                    <constraint firstItem="1wQ-If-Jrr" firstAttribute="top" secondItem="2XN-k8-KJC" secondAttribute="bottom" constant="8" id="Hpr-Lp-6Dn"/>
                                     <constraint firstAttribute="width" constant="197" id="NXD-zd-Q8q"/>
-                                    <constraint firstItem="iAl-2W-WKV" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="bXq-aH-fji"/>
+                                    <constraint firstItem="nBD-wE-nTs" firstAttribute="top" secondItem="1wQ-If-Jrr" secondAttribute="bottom" id="bGJ-dx-H6a"/>
+                                    <constraint firstItem="dvG-Sa-Jsa" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="i6n-dS-8YL"/>
+                                    <constraint firstItem="2XN-k8-KJC" firstAttribute="top" secondItem="WEc-ZB-fvh" secondAttribute="bottom" constant="50" id="pPc-EE-mnv"/>
+                                    <constraint firstItem="WEc-ZB-fvh" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="t23-4r-0cp"/>
+                                    <constraint firstItem="nBD-wE-nTs" firstAttribute="centerX" secondItem="Q4r-gb-O1r" secondAttribute="centerX" id="tEw-bH-1CR"/>
+                                    <constraint firstItem="dvG-Sa-Jsa" firstAttribute="top" secondItem="rcg-g6-JF8" secondAttribute="bottom" constant="8" id="yEW-ey-LWf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,12 +146,17 @@
                     </view>
                     <connections>
                         <outlet property="bottomStackView" destination="gai-AN-WDP" id="6kp-qb-71X"/>
+                        <outlet property="colorMorphOptionButton" destination="nBD-wE-nTs" id="z04-uR-Rf4"/>
                         <outlet property="optionContainerView" destination="Q4r-gb-O1r" id="Fp5-RX-KcU"/>
-                        <outlet property="optionLabel" destination="iAl-2W-WKV" id="4fy-d6-Pbq"/>
+                        <outlet property="pickSampleOptionButton" destination="WEc-ZB-fvh" id="NhA-Wf-28h"/>
+                        <outlet property="recordOptionButton" destination="dvG-Sa-Jsa" id="qoB-iO-PE7"/>
                         <outlet property="recordingView" destination="dFe-BD-tr8" id="ItS-Ul-dk0"/>
                         <outlet property="recordingViewWidthConstraint" destination="uQl-2l-Jnx" id="EbP-83-M9r"/>
+                        <outlet property="soundsCategoryLabel" destination="rcg-g6-JF8" id="aMz-Pk-yI1"/>
                         <outlet property="topMiddlePad" destination="Dnv-g0-Fg4" id="0W0-Qm-EXA"/>
                         <outlet property="topStackView" destination="cK0-GJ-rae" id="bIM-gf-e7g"/>
+                        <outlet property="visualCategoryLabel" destination="2XN-k8-KJC" id="w5U-PZ-vYF"/>
+                        <outlet property="wiggleOptionButton" destination="1wQ-If-Jrr" id="p9G-OH-uxw"/>
                         <outletCollection property="padViews" destination="Dnv-g0-Fg4" collectionClass="NSMutableArray" id="ZGL-QE-UkK"/>
                         <outletCollection property="padViews" destination="sGo-JY-txr" collectionClass="NSMutableArray" id="PaT-x4-Hvb"/>
                         <outletCollection property="padViews" destination="2gD-I6-kNs" collectionClass="NSMutableArray" id="o8Y-EV-PZV"/>
@@ -118,46 +169,38 @@
             </objects>
             <point key="canvasLocation" x="98.50074962518741" y="117.59999999999999"/>
         </scene>
-        <!--Alt View Controller-->
+        <!--Sample Picker View Controller-->
         <scene sceneID="k1b-0s-3lW">
             <objects>
-                <viewController id="0EN-CB-xJa" customClass="AltViewController" customModule="TappyFingers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0EN-CB-xJa" customClass="SamplePickerViewController" customModule="TappyFingers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pYR-XZ-goa">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vru-t9-fCy">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="375"/>
-                                <color key="backgroundColor" red="0.86216201910000001" green="0.72789883560000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-w2-Zz4">
+                                <rect key="frame" x="163" y="57" width="340" height="318"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="1tP-P4-gjh"/>
+                                    <constraint firstAttribute="width" constant="340" id="evi-Kt-H2j"/>
                                 </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Al-wU-tqD">
-                                <rect key="frame" x="585" y="40" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="0EN-CB-xJa" eventType="touchUpInside" id="q3P-vO-TMf"/>
+                                    <outlet property="dataSource" destination="0EN-CB-xJa" id="gFK-yf-Bnu"/>
+                                    <outlet property="delegate" destination="0EN-CB-xJa" id="o0m-iq-abH"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vru-t9-fCy" firstAttribute="leading" secondItem="8EZ-am-pxk" secondAttribute="leading" id="20Z-wd-99e"/>
-                            <constraint firstItem="vru-t9-fCy" firstAttribute="top" secondItem="8EZ-am-pxk" secondAttribute="top" id="DpF-Ki-XKZ"/>
-                            <constraint firstItem="vru-t9-fCy" firstAttribute="bottom" secondItem="8EZ-am-pxk" secondAttribute="bottom" id="wdp-Zf-owe"/>
+                            <constraint firstItem="1qR-w2-Zz4" firstAttribute="centerX" secondItem="8EZ-am-pxk" secondAttribute="centerX" id="LSe-vV-RhH"/>
+                            <constraint firstItem="1qR-w2-Zz4" firstAttribute="top" secondItem="8EZ-am-pxk" secondAttribute="top" constant="57" id="SAE-Lc-BZs"/>
+                            <constraint firstItem="8EZ-am-pxk" firstAttribute="bottom" secondItem="1qR-w2-Zz4" secondAttribute="bottom" id="l7H-FO-Tmd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8EZ-am-pxk"/>
                     </view>
-                    <connections>
-                        <outlet property="testView" destination="vru-t9-fCy" id="E85-rq-a3p"/>
-                        <outlet property="testViewWidthConstraint" destination="1tP-P4-gjh" id="hSt-QI-Zlz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1hD-tx-93v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.89355322338831" y="908"/>
+            <point key="canvasLocation" x="98.50074962518741" y="944.79999999999995"/>
         </scene>
     </scenes>
 </document>
