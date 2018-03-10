@@ -11,4 +11,4 @@ A mobile drum machine for iOS devices
 - Ability to share recorded sound samples with other users who have the app
 - Ability to customize the look, feel, and animation responses of drum pads
 
-![Screenshot](TappyFingers/Screenshots/testshot.png)
+![Screenshot](TappyFingers/Screenshots/.png)
