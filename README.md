@@ -2,8 +2,6 @@
 A mobile drum machine for iOS devices
 
 ![Screenshot](TappyFingers/Screenshots/padview.png)
-![Screenshot](TappyFingers/Screenshots/optionsmenu.png)
-![Screenshot](TappyFingers/Screenshots/recordview.png)
 
 # Features
 - Six drum pads for making a beat on the go
