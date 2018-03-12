@@ -13,6 +13,11 @@ protocol PadViewDelegate: class {
     func padWasLongPressed(pad: PadView)
 }
 
+enum FileType {
+    case m4a
+    case wav
+}
+
 class PadView: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -30,6 +35,8 @@ class PadView: UIView {
     var colorSets = [[CGColor]]()
     var currentColorSet = 0
     
+    // MARK: Life Cycle Methods
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -45,10 +52,6 @@ class PadView: UIView {
         self.isUserInteractionEnabled = true
         createColorSets()
         createGradientLayer()
-        
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = 10
-        self.layer.borderColor = UIColor.black.cgColor
     }
     
     func setupView() {
@@ -61,25 +64,25 @@ class PadView: UIView {
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
+    // MARK: IB Action Methods
+    
     @IBAction func padWasTapped(_ sender: UIButton) {
         audioPlayer.currentTime = 0
         audioPlayer.play()
 
         changeGradient()
-
-        //        performRotation()
-        //        changeSize()
         wiggle()
     }
     @IBAction func padWasLongPressed(_ sender: UILongPressGestureRecognizer) {
-        delegate?.padWasLongPressed(pad: self)
+        if sender.state == .began {
+            delegate?.padWasLongPressed(pad: self)
+        }
     }
     
     // MARK: Gradient Methods
     
     func createGradientLayer() {
         gradientLayer.frame = self.bounds
-        gradientLayer.cornerRadius = 10
         gradientLayer.colors = colorSets[currentColorSet]
         self.layer.addSublayer(gradientLayer)
     }
@@ -132,24 +135,24 @@ class PadView: UIView {
     
     // MARK: Audio Methods
     
-    func audioPlayerSetup(fileName: String) {
-        let drumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: fileName, ofType: "wav")!)
+    func audioPlayerSetup(fileName: String, fileType: FileType) {
+        let file: URL?
+        
+        switch fileType {
+        case .wav:
+            guard let path = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
+            file = URL(fileURLWithPath: path)
+        case .m4a:
+            file = URL.getDocumentsDirectory().appendingPathComponent(fileName)
+        }
+        
+        guard let soundFile = file else { return }
+        
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: drumSound as URL)
+            audioPlayer = try AVAudioPlayer(contentsOf: soundFile as URL)
             audioPlayer.prepareToPlay()
         } catch {
             print("Problem getting File")
         }
     }
-    
-    func audioPlayerSetup2(fileName: String) {
-        let drumSound = URL.getDocumentsDirectory().appendingPathComponent(fileName)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: drumSound)
-            audioPlayer.prepareToPlay()
-        } catch {
-            print("Problem getting File")
-        }
-    }
-    
 }

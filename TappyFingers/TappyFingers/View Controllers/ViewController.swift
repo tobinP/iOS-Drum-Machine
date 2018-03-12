@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         for i in 0..<padViews.count {
-            padViews[i].audioPlayerSetup(fileName: drumFileNames[i])
+            padViews[i].audioPlayerSetup(fileName: drumFileNames[i], fileType: .wav)
             padViews[i].delegate = self
         }
     }
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        rotateAllPads180()
+        rotateAllPads180()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,6 +86,8 @@ class ViewController: UIViewController {
             }
         }, completion: nil )
     }
+    
+    // MARK: IB Action Methods
     
     @IBAction func displayRecordingView(_ sender: UIButton) {
         // Animate the view expansion and alpha
@@ -127,7 +129,7 @@ extension ViewController: PadViewDelegate {
     
     func padWasLongPressed(pad: PadView) {
         
-        // SET FOCUSED VIEW HERE
+        // This pad will be the one to have it's sample file updated from the sample picker
         focusedPadView = pad
         
         blurEffectView.frame = view.bounds
@@ -201,6 +203,6 @@ extension ViewController: PadViewDelegate {
 
 extension ViewController: SamplePickerDelegate {
     func replacePadSound(fileName: String) {
-        focusedPadView?.audioPlayerSetup2(fileName: fileName)
+        focusedPadView?.audioPlayerSetup(fileName: fileName, fileType: .m4a)
     }
 }

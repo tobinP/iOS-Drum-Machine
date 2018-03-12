@@ -23,7 +23,6 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPh-Af-ZPr">
                     <rect key="frame" x="0.0" y="0.0" width="328" height="256"/>
                     <gestureRecognizers/>
-                    <state key="normal" title="Button"/>
                     <connections>
                         <action selector="padWasTapped:" destination="-1" eventType="touchDown" id="6jl-6A-cwR"/>
                         <outletCollection property="gestureRecognizers" destination="Sxj-t7-0Q4" appends="YES" id="b6D-ht-P9z"/>
