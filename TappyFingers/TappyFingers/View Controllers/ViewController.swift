@@ -87,6 +87,8 @@ class ViewController: UIViewController {
         }, completion: nil )
     }
     
+    // MARK: IB Action Methods
+    
     @IBAction func displayRecordingView(_ sender: UIButton) {
         // Animate the view expansion and alpha
         self.view.bringSubview(toFront: recordingView)

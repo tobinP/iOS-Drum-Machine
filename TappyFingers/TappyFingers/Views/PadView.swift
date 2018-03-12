@@ -35,6 +35,8 @@ class PadView: UIView {
     var colorSets = [[CGColor]]()
     var currentColorSet = 0
     
+    // MARK: Life Cycle Methods
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -61,6 +63,8 @@ class PadView: UIView {
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
+    
+    // MARK: IB Action Methods
     
     @IBAction func padWasTapped(_ sender: UIButton) {
         audioPlayer.currentTime = 0
