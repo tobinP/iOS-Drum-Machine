@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        rotateAllPads180()
+        rotateAllPads180()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
