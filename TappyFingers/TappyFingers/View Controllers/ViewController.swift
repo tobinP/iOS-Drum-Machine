@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         for i in 0..<padViews.count {
-            padViews[i].audioPlayerSetup(fileName: drumFileNames[i])
+            padViews[i].audioPlayerSetup(fileName: drumFileNames[i], fileType: .wav)
             padViews[i].delegate = self
         }
     }
@@ -127,7 +127,7 @@ extension ViewController: PadViewDelegate {
     
     func padWasLongPressed(pad: PadView) {
         
-        // SET FOCUSED VIEW HERE
+        // This pad will be the one to have it's sample file updated from the sample picker
         focusedPadView = pad
         
         blurEffectView.frame = view.bounds
@@ -201,6 +201,6 @@ extension ViewController: PadViewDelegate {
 
 extension ViewController: SamplePickerDelegate {
     func replacePadSound(fileName: String) {
-        focusedPadView?.audioPlayerSetup2(fileName: fileName)
+        focusedPadView?.audioPlayerSetup(fileName: fileName, fileType: .m4a)
     }
 }

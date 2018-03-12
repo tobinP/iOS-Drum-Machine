@@ -206,9 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				C1422FBF204D1AC80004D9AB /* PadView.swift */,
-				C12A72182050462F004DA5DF /* RecordingView.xib */,
-				C12A721A2050477D004DA5DF /* RecordingView.swift */,
 				C12A722520525AE6004DA5DF /* PadView.xib */,
+				C12A721A2050477D004DA5DF /* RecordingView.swift */,
+				C12A72182050462F004DA5DF /* RecordingView.xib */,
 				C156C9692055A9960021DCEE /* SamplePickerTableViewCell.swift */,
 			);
 			path = Views;

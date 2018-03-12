@@ -13,6 +13,11 @@ protocol PadViewDelegate: class {
     func padWasLongPressed(pad: PadView)
 }
 
+enum FileType {
+    case m4a
+    case wav
+}
+
 class PadView: UIView {
     
     @IBOutlet var contentView: UIView!
@@ -45,10 +50,6 @@ class PadView: UIView {
         self.isUserInteractionEnabled = true
         createColorSets()
         createGradientLayer()
-        
-//        self.layer.borderWidth = 2
-//        self.layer.cornerRadius = 10
-//        self.layer.borderColor = UIColor.black.cgColor
     }
     
     func setupView() {
@@ -66,9 +67,6 @@ class PadView: UIView {
         audioPlayer.play()
 
         changeGradient()
-
-        //        performRotation()
-        //        changeSize()
         wiggle()
     }
     @IBAction func padWasLongPressed(_ sender: UILongPressGestureRecognizer) {
@@ -79,7 +77,6 @@ class PadView: UIView {
     
     func createGradientLayer() {
         gradientLayer.frame = self.bounds
-//        gradientLayer.cornerRadius = 10
         gradientLayer.colors = colorSets[currentColorSet]
         self.layer.addSublayer(gradientLayer)
     }
@@ -132,24 +129,24 @@ class PadView: UIView {
     
     // MARK: Audio Methods
     
-    func audioPlayerSetup(fileName: String) {
-        let drumSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: fileName, ofType: "wav")!)
+    func audioPlayerSetup(fileName: String, fileType: FileType) {
+        let file: URL?
+        
+        switch fileType {
+        case .wav:
+            guard let path = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
+            file = URL(fileURLWithPath: path)
+        case .m4a:
+            file = URL.getDocumentsDirectory().appendingPathComponent(fileName)
+        }
+        
+        guard let soundFile = file else { return }
+        
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: drumSound as URL)
+            audioPlayer = try AVAudioPlayer(contentsOf: soundFile as URL)
             audioPlayer.prepareToPlay()
         } catch {
             print("Problem getting File")
         }
     }
-    
-    func audioPlayerSetup2(fileName: String) {
-        let drumSound = URL.getDocumentsDirectory().appendingPathComponent(fileName)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: drumSound)
-            audioPlayer.prepareToPlay()
-        } catch {
-            print("Problem getting File")
-        }
-    }
-    
 }
