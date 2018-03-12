@@ -14,11 +14,14 @@ protocol SamplePickerDelegate: class {
 
 class SamplePickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     weak var delegate: SamplePickerDelegate?
     var samples = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundView = UIImageView(image:UIImage(named:"backgroundBlue"))
 
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -31,13 +34,23 @@ class SamplePickerViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = samples[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SamplePickerTableViewCell", for: indexPath as IndexPath) as? SamplePickerTableViewCell else { return UITableViewCell()}
+        cell.filenameLabel.text = "Filename: " + samples[indexPath.row]
+        cell.authorLabel.text = "Author: "
+        cell.mainView.layer.cornerRadius = 10
+        
+        TransformAnimator.animateHorizontalAxis(view: cell.contentView)
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         delegate?.replacePadSound(fileName: samples[indexPath.row])
         self.dismiss(animated: true, completion: nil)
     }

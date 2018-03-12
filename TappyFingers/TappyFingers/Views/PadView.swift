@@ -46,9 +46,9 @@ class PadView: UIView {
         createColorSets()
         createGradientLayer()
         
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = 10
-        self.layer.borderColor = UIColor.black.cgColor
+//        self.layer.borderWidth = 2
+//        self.layer.cornerRadius = 10
+//        self.layer.borderColor = UIColor.black.cgColor
     }
     
     func setupView() {
@@ -79,7 +79,7 @@ class PadView: UIView {
     
     func createGradientLayer() {
         gradientLayer.frame = self.bounds
-        gradientLayer.cornerRadius = 10
+//        gradientLayer.cornerRadius = 10
         gradientLayer.colors = colorSets[currentColorSet]
         self.layer.addSublayer(gradientLayer)
     }
