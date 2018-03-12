@@ -74,7 +74,9 @@ class PadView: UIView {
         wiggle()
     }
     @IBAction func padWasLongPressed(_ sender: UILongPressGestureRecognizer) {
-        delegate?.padWasLongPressed(pad: self)
+        if sender.state == .began {
+            delegate?.padWasLongPressed(pad: self)
+        }
     }
     
     // MARK: Gradient Methods
