@@ -1,9 +1,19 @@
 # iOS-Drum-Machine
 A mobile drum machine for iOS devices
 
+
+Tap on any pad for sample playback and corresponding animation
 ![Screenshot](TappyFingers/TappyFingers/Screenshots/padview.png) 
+
+Long press on any pad to pull up the options menu
+(Visual options coming soon)
 ![Screenshot](TappyFingers/TappyFingers/Screenshots/optionsmenu.png)
+
+Tapping on 'Record new sample' will pull up the recording menu
 ![Screenshot](TappyFingers/TappyFingers/Screenshots/recordview.png)
+
+Tapping on 'Pick sample from list' will pull up the sample selection screen and apply the chosen sample to the pad that was long pressed.
+(Author information coming soon)
 ![Screenshot](TappyFingers/TappyFingers/Screenshots/samplepicker.png)
 
 # Features
